@@ -48,17 +48,10 @@ st.title("🚗 Car Price Prediction App")
 st.markdown("Fill in the car details below and get the predicted selling price instantly!")
 
 # Load trained model
-model = CatBoostRegressor()
-model.load_model("car_price_model.cbm")
-
 df = pd.read_csv("carData.csv")
-
-# Ensure Car_Name is treated as string
 df['Car_Name'] = df['Car_Name'].astype(str)
 
-# Unique car names for dropdown
 car_names = df['Car_Name'].unique()
-
 selected_model = st.selectbox("Select Car Model", car_names)
 st.caption(f"You selected: {selected_model}")
 
