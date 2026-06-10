@@ -86,7 +86,9 @@ input_df = pd.DataFrame({
 "Transmission": [trans_map[transmission]],
 "Owner": [owner]
 })
-
+# Load trained model
+model = CatBoostRegressor()
+model.load_model("car_price_model.cbm")
 # Prediction button
 if st.button("🔮 Predict Price"):
   predicted_price = model.predict(input_df)
