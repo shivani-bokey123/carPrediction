@@ -47,11 +47,13 @@ st.markdown("""
 st.title("🚗 Car Price Prediction App")
 st.markdown("Fill in the car details below and get the predicted selling price instantly!")
 
-# Load trained model
-df = pd.read_csv("carData.csv")
-df['Car_Name'] = df['Car_Name'].astype(str)
+df = pd.read_csv("carData.csv")   # ensure file path is correct
+st.write(df.head())               # debug: show first 5 rows
+st.write(df.columns)              # debug: show column names
 
+df['Car_Name'] = df['Car_Name'].astype(str)
 car_names = df['Car_Name'].unique()
+
 selected_model = st.selectbox("Select Car Model", car_names)
 st.caption(f"You selected: {selected_model}")
 
