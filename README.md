@@ -1,7 +1,7 @@
 # Car Price Prediction App
 
 This project predicts the selling price of used cars.  
-I compared several machine learning models during training, including linear regression, decision trees, random forest, and CatBoost.  
+I compared several machine learning models during training, including  LinearRegression, Ridge, Lasso, DecisionTreeRegressor, RandomForestRegressor, XGBRegressor, LGBMRegressor, aur CatBoostRegressor  
 After evaluating their performance, CatBoost showed the best accuracy, so I used it as the final model.
 
 The app is built with Streamlit and provides an interactive interface where users can input car details such as year, kilometers driven, fuel type, seller type, transmission, and number of owners.  
