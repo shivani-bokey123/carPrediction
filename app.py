@@ -52,14 +52,13 @@ model = CatBoostRegressor()
 model.load_model("car_price_model.cbm")
 
 
-# --- Display-only dropdown for Car Model ---
-car_models = [
-"Audi A6 35 TDI S LINE", "BMW X1", "Honda City",
-"Hyundai Creta", "Maruti Swift", "Toyota Innova",
-"Mahindra Scorpio", "Tata Nexon"
-]
-selected_model = st.selectbox("Select Car Model (Display Only)", car_models)
-st.caption(f"You selected: {selected_model} (not used in prediction)")
+# --- Dynamic dropdown for Car Model ---
+df = pd.read_csv("carData.csv")  # make sure dataset is in repo
+car_names = df['Car_Name'].unique()
+
+selected_model = st.selectbox("Select Car Model", car_names)
+st.caption(f"You selected: {selected_model}")
+
 
 # --- Input fields for prediction ---
 col1, col2 = st.columns(2)
