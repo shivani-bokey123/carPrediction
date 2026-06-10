@@ -49,7 +49,7 @@ st.markdown("Fill in the car details below and get the predicted selling price i
 
 # Load trained model
 model = CatBoostRegressor()
-model.load_model(r"G:/My Drive/carPrediction (1)/carPrediction(1)/car_price_model.cbm")
+model.load_model("car_price_model.cbm")
 
 
 # --- Display-only dropdown for Car Model ---
