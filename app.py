@@ -51,9 +51,12 @@ st.markdown("Fill in the car details below and get the predicted selling price i
 model = CatBoostRegressor()
 model.load_model("car_price_model.cbm")
 
+df = pd.read_csv("carData.csv")
 
-# --- Dynamic dropdown for Car Model ---
-df = pd.read_csv("carData.csv")  # make sure dataset is in repo
+# Ensure Car_Name is treated as string
+df['Car_Name'] = df['Car_Name'].astype(str)
+
+# Unique car names for dropdown
 car_names = df['Car_Name'].unique()
 
 selected_model = st.selectbox("Select Car Model", car_names)
