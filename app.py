@@ -47,15 +47,15 @@ st.markdown("""
 st.title("🚗 Car Price Prediction App")
 st.markdown("Fill in the car details below and get the predicted selling price instantly!")
 
-df = pd.read_csv("carData.csv")   # ensure file path is correct
-st.write(df.head())               # debug: show first 5 rows
-st.write(df.columns)              # debug: show column names
 
-df['Car_Name'] = df['Car_Name'].astype(str)
-car_names = df['Car_Name'].unique()
-
-selected_model = st.selectbox("Select Car Model", car_names)
-st.caption(f"You selected: {selected_model}")
+# --- Display-only dropdown for Car Model ---
+car_models = [
+"eon", "verna", "i20","Xcent","grant i10","elantra","enova","ritz","sx4","ciaz","wagon r","swift","vitara brezza","ciaz"," s cross", "Alto 800","ertiga","dzire","wagon r","sx4","alto k10"
+"i10", "Creta", "Jazz","ignis","sx4","Wagon R","Baleno","Omni","Fortuner","Innova","Collora Altis", 'Etios G","Fortuner","Etios Liva","Camry","Land Cruiser","Royal Enfield Thunder 500",
+"amaze", "city","brio","Bajaj Pulsar 150","Honda CB Shine","Bajaj Discover 125","Honda CB  twister","Activa 3g","Bajaj Ct 100"
+]
+selected_model = st.selectbox("Select Car Model (Display Only)", car_models)
+st.caption(f"You selected: {selected_model} (not used in prediction)")
 
 
 # --- Input fields for prediction ---
