@@ -26,3 +26,15 @@ Code
 
 ## Deployment
 The app can be deployed on Streamlit Cloud.
+
+## Application Screenshots
+
+#### Input Interface
+
+![ Model Input](inputUI.jpeg)
+
+#### Output Result
+
+![ Model Output](output.jpeg)
+
+
